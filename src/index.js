@@ -30,6 +30,10 @@ const renderer = new Renderer({
 document.body.appendChild(view)
 Ticker.shared.add(draw)
 
+// frag uniforms
+const uniforms = Object.assign({}, BASIC_UNIFORMS, { b: 0 })
+
+// mesh object that we apply shader to
 const geometry = new Geometry()
   .addAttribute(
     'aVertexPosition',
@@ -38,11 +42,6 @@ const geometry = new Geometry()
   )
   .addAttribute('aUvs', [0, 0, 1, 0, 1, 1, 0, 1], 2) // u, v pairs
   .addIndex([0, 1, 2, 0, 2, 3])
-
-// frag uniforms
-const uniforms = Object.assign({}, BASIC_UNIFORMS, { b: 0 })
-
-// mesh object that we apply shader to
 const shader = Shader.from(basicVert, frag, uniforms)
 const mesh = new Mesh(geometry, shader)
 mesh.x = WIDTH / 2
