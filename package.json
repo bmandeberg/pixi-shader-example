@@ -31,5 +31,9 @@
     "presets": [
       "@babel/preset-env"
     ]
+  },
+  "dependencies": {
+    "dat.gui": "^0.7.7",
+    "pixi.js": "^6.0.0"
   }
 }

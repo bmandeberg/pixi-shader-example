@@ -10,7 +10,7 @@ module.exports = {
                 use: ['babel-loader']
             },
             {
-                test: /\.html$/,
+                test: /\.(html|frag|vert)$/,
                 use: ['raw-loader']
             },
             {
